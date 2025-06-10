@@ -36,5 +36,5 @@ char AIPlayer::makeGuess(const string& guessedWord, const MyVector<char>& guesse
         }
     }
     
-    return 'z';
+    return ' ';
 }

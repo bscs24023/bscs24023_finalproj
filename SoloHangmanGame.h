@@ -27,6 +27,7 @@ class SoloHangmanGame
         void select_word();
         bool check_guess(char guess);
         void display_status();
+        bool already_guessed(char c);   
         void play();
 };
 
