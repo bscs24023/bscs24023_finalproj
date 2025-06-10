@@ -14,6 +14,9 @@ class Person
         Person(const string& uname);
         Person(const Person& other);
         virtual ~Person();
+
+        virtual void displayUser() const;
+        virtual char makeGuess(const string& guessedWord, const MyVector<char>& guessedLetters) = 0;
     
 };
 

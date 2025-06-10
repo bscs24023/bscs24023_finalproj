@@ -3,6 +3,8 @@
 
 #include "Person.h"
 #include "MyVector.h"
+#include "InvalidGuess.h"
+#include "AlreadyGuessed.h"
 
 class HumanPlayer : public Person 
 {
@@ -13,6 +15,9 @@ class HumanPlayer : public Person
         HumanPlayer();
         HumanPlayer(const string& uname, const string& rname);
         HumanPlayer(const HumanPlayer& other);
+
+        void displayUser() const override;
+        char makeGuess(const string& guessedWord, const MyVector<char>& guessedLetters) override;
     
 };
 

@@ -12,6 +12,8 @@ class AIPlayer : public Person
 
     public:
         AIPlayer();
+        void displayUser() const override;
+        char makeGuess(const string& guessedWord, const MyVector<char>& guessedLetters) override;
     
 };
 
