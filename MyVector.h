@@ -14,14 +14,14 @@ class MyVector
 
         void double_capacity() 
         {
-            X* new_arr = new X[cap * 2];
+            X* new_arr = new X[cap + cap + 1];
             for (int i = 0; i < len; i++) 
             {
                 new_arr[i] = arr[i];
             }
             delete[] arr;
             arr = new_arr;
-            cap = cap * 2;
+            cap = cap + cap + 1;
         }
 
 public:
