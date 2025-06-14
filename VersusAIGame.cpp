@@ -29,3 +29,52 @@ void VersusAIGame::select_word()
     secret_word = word_list[index];
     guessed_word = string(secret_word.length(), '_');
 }
+
+bool VersusAIGame::already_guessed(char c, const MyVector<char>& guesses) 
+{
+    for (int i = 0; i < (int)guesses.size(); i++) 
+    {
+        if (guesses[i] == c)
+        {
+            return true;
+        }
+    }
+    return false;
+}
+
+bool VersusAIGame::check_guess(char guess) 
+{
+    bool correct = false;
+    
+    for (int i = 0; i < (int)secret_word.length(); i++) 
+    {
+        if (secret_word[i] == guess) 
+        {
+            guessed_word[i] = guess;
+            correct = true;
+        }
+    }
+    return correct;
+}
+
+void VersusAIGame::display_state() 
+{
+    cout << endl;
+    cout << "Guessed word: " << guessed_word << endl;
+    
+    cout << player1->username << " guessed letters: ";
+    
+    for (int i = 0; i < (int)guesses1.size(); i++) 
+    {
+        cout << guesses1[i] << " ";
+    }
+    
+    cout << endl;
+    cout << player2->username << " guessed letters: ";
+    
+    for (int i = 0; i < (int)guesses2.size(); i++) 
+    {
+        cout << guesses2[i] << " ";
+    }
+    cout << endl;
+}

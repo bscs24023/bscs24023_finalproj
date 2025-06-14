@@ -28,6 +28,9 @@ class VersusAIGame
     public:
         VersusAIGame(Person* p1, Person* p2);
         void select_word();
+        bool already_guessed(char c, const MyVector<char>& guesses);
+        bool check_guess(char guess);
+        void display_state();
 };
 
 #endif
