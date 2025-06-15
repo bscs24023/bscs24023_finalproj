@@ -76,9 +76,11 @@ bool SoloHangmanGame::already_guessed(char c)
 
 void SoloHangmanGame::play() 
 {
-	cout << "One-player game:";
+	cout << "One-player game:" << endl;
 	
 	player->displayUser();
+
+    cout << endl;
 
 	while (attempts_left > 0 && guessed_word != secret_word) 
 	{

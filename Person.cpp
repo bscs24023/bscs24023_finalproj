@@ -12,5 +12,6 @@ Person::~Person() {}
 
 void Person::displayUser() const 
 {
+    cout << endl;
     cout << "Username: " << username << endl;
 }
