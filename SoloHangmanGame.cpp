@@ -2,6 +2,7 @@
 #include "InvalidGuess.h"
 #include "AlreadyGuessed.h"
 #include "MyVector.h"
+#include "Logger.h"
 #include <iostream>
 #include <random>
 #include <cstdlib>  
@@ -120,12 +121,14 @@ void SoloHangmanGame::play()
 		catch (InvalidGuess& e) 
 		{
 			cout << e.message() << endl;
+            Logger::getInstance().writeError("Invalid guess entered by user.");
 		
 		} 
 		
 		catch (AlreadyGuessed& e) 
 		{
 			cout << e.message() << endl;
+            Logger::getInstance().writeError("User guessed an already guessed letter.");
 		}
 	}
     

@@ -2,6 +2,7 @@
 #include "InvalidGuess.h"
 #include "AlreadyGuessed.h"
 #include "MyVector.h"
+#include "Logger.h"
 #include <cstdlib>  
 #include <ctime>  
 #include <iostream>
@@ -123,10 +124,13 @@ void VersusAIGame::play()
             catch (InvalidGuess& e) 
             {
                 cout << e.message() << endl;
+                Logger::getInstance().writeError("Invalid guess entered by user.");
             } 
             catch (AlreadyGuessed& e) 
             {
                 cout << e.message() << endl;
+                Logger::getInstance().writeError("User guessed an already guessed letter.");
+
             }
         }
 
@@ -148,11 +152,13 @@ void VersusAIGame::play()
                 if (guess < 'a' || guess > 'z') 
                 {
                     throw InvalidGuess();
+                    Logger::getInstance().writeError("Invalid guess entered by AI.");
                 }
                 
                 if (already_guessed(guess, guesses2)) 
                 {
                     throw AlreadyGuessed();
+                    Logger::getInstance().writeError("AI guessed an already guessed letter.");
                 }
 
                 guesses2.push(guess);

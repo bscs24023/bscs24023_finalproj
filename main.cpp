@@ -3,11 +3,14 @@
 #include "AIPlayer.h"
 #include "SoloHangmanGame.h"
 #include "VersusAIGame.h"
+#include "Logger.h"
 
 using namespace std;
 
 int main() 
 {
+    Logger::getInstance().initialize("log.txt");
+
     srand(time(0));
     int choice;
     string user_name;
@@ -43,5 +46,6 @@ int main()
         delete user;
     }
     
+    Logger::getInstance().cleanup();
     return 0;
 }
