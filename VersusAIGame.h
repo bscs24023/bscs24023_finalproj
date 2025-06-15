@@ -31,6 +31,7 @@ class VersusAIGame
         bool already_guessed(char c, const MyVector<char>& guesses);
         bool check_guess(char guess);
         void display_state();
+        void play();
 };
 
 #endif
